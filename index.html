@@ -72,13 +72,13 @@
 <li>Once installed, some project templates will be available in R Studio Project Wizard.</li>
 </ul>
 <p><img src="reference/figures/01-createproject.png" width="500"></p>
+<ul>
+<li>If you select Cleaning/Analysis review template, you need to give the name of the project folder and the sub directory of it.</li>
+</ul>
+<p><a href="Create%20a%20cleaning%20review%20template"><img src="reference/figures/02-createcleaningreviewtemplate.png" width="500"></a></p>
 <div class="section level3">
 <h3 id="cleaning-review-template">Cleaning review template<a class="anchor" aria-label="anchor" href="#cleaning-review-template"></a>
 </h3>
-<ul>
-<li>If you select Cleaning review template, you need to give the name of the project folder and the subdirectory of it.</li>
-</ul>
-<p><a href="Create%20a%20cleaning%20review%20template"><img src="reference/figures/02-createcleaningreviewtemplate.png" width="500"></a></p>
 <ul>
 <li>
 <p>This will create a new folder with your project. It opens a <strong>config.R</strong> file where you can input several information such as :</p>
@@ -111,6 +111,38 @@
 </ul>
 <p><img src="reference/figures/05-htmloutput.png" width="500"></p>
 <p><img src="reference/figures/06-exceloutput.png" width="500"></p>
+</div>
+<div class="section level3">
+<h3 id="analysis-review-template">Analysis review template<a class="anchor" aria-label="anchor" href="#analysis-review-template"></a>
+</h3>
+<ul>
+<li>
+<p>This will create a new folder with your project. It opens a <strong>config.R</strong> file where you can input several information such as :</p>
+<ul>
+<li><p>results table to be reviewed</p></li>
+<li><p>dataset to be used to re-calculate</p></li>
+<li><p>names of the analysis key column and weights</p></li>
+<li><p>select multiple separator</p></li>
+<li><p>creating the survey design</p></li>
+</ul>
+</li>
+</ul>
+<p>Don’t forget to save.</p>
+<ul>
+<li><p>There is then a quarto file <strong>analysis_review_template.qmd</strong>. It is a step by step process to recreate, bind and review the analysis.</p></li>
+<li>
+<p>You can click on render to render a file.</p>
+<ul>
+<li>There is a block to be updated manually where you have to input the correct names of columns to be used and compared with.</li>
+</ul>
+</li>
+</ul>
+<p><img src="reference/figures/07-configanalysis.png" width="500"></p>
+<p><img src="reference/figures/08-analysisquartoupdate.png" width="500"></p>
+<ul>
+<li>Once render, this will create an html output that you can navigate to read the results of review. It will also write an excel file in your outputs folder with the results tables with all the checks, and review.</li>
+</ul>
+<p><img src="reference/figures/09-analysishtmloutput.png" width="500"></p>
 </div>
 </div>
 <div class="section level2">
