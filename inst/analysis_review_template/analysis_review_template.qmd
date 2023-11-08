@@ -76,9 +76,11 @@ binded_results <- results_to_review %>%
 
 ```{r}
 ###TO BE UPDATED MANUALLY TO SELECT THE COLUMNS OF INTEREST
-analysis_review <- review_variables(binded_results, 
-                 columns_to_review = c("stat.x", "stat_low.x", "stat_upp.x"),
-                 columns_to_compare_with = c("stat.y", "stat_low.y", "stat_upp.y"))
+analysis_review <- review_analysis(binded_results, 
+                                   stat_columns_to_review = c("stat.x", "stat_low.x", "stat_upp.x"),
+                                   stat_columns_to_compare_with = c("stat.y", "stat_low.y", "stat_upp.y"),
+                                   analysis_key_column = analysis_key_column
+                  )
 ```
 
 ## 5. Summary
@@ -87,7 +89,7 @@ Proportion of same results in percent
 
 ```{r}
 analysis_review$review_table %>%
- dplyr::group_by(variable) %>%
+ dplyr::group_by(stat) %>%
  dplyr::summarise(proportion_correct = mean(review_check)*100)
 ```
 
@@ -95,8 +97,16 @@ Details per variable
 
 ```{r}
 analysis_review$review_table %>%
- dplyr::group_by(variable, review_comment) %>%
+ dplyr::group_by(stat, review_comment) %>%
  dplyr::tally(sort = T)
+```
+
+Any differences
+```{r}
+analysis_review$review_table %>%
+  dplyr::filter(!review_check) %>%
+  dplyr::select(review_check, analysis_type,analysis_var,group_var) %>% 
+  dplyr::distinct()
 ```
 
 # 4. Miscellaneous

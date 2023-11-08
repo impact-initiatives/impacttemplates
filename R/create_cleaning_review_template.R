@@ -1,6 +1,6 @@
 #' Create a project folder for cleaning review
 #'
-#' @param path Path for the new folder
+#' @param folder_path Path for the new folder
 #' @param ... Extra information collected from the RStudio wizard
 #'
 #' @return Folder with a copy of the cleaning_review_template_folder

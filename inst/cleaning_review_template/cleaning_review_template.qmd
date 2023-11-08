@@ -132,15 +132,12 @@ if (check_for_PII) {
   
   cleann %>% 
     select(any_of(list_log$potential_PII$question)) %>% 
-    lapply(unique)
+    lapply(unique) %>% 
+    lapply(head)
 }
 ```
 
-```{r}
-  cleann %>% 
-    select(any_of(list_log$potential_PII$question)) %>% 
-    lapply(unique)
-```
+
 
 ## Check for time
 ```{r check time}
@@ -243,9 +240,10 @@ if (check_for_logical) {
 ```
 Details can be see here
 ```{r, warning = F, message = F}
+if (check_for_logical) {
 
   print_log(list_log$logical_all, "No logical checks found")
-
+}
 ```
 
 ## Other and translation

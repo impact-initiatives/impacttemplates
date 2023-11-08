@@ -1,6 +1,6 @@
 #' Create a project folder for analysis review
 #'
-#' @param path Path for the new folder
+#' @param folder_path Path for the new folder
 #' @param ... Extra information collected from the RStudio wizard
 #'
 #' @return Folder with a copy of the analysis_review_template_folder

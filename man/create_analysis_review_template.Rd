@@ -4,10 +4,10 @@
 \alias{create_analysis_review_template}
 \title{Create a project folder for analysis review}
 \usage{
-create_analysis_review_template(path, ...)
+create_analysis_review_template(folder_path, ...)
 }
 \arguments{
-\item{path}{Path for the new folder}
+\item{folder_path}{Path for the new folder}
 
 \item{...}{Extra information collected from the RStudio wizard}
 }
